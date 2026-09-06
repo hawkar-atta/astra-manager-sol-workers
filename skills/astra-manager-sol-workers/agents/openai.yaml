@@ -1,0 +1,4 @@
+interface:
+  display_name: "Astra Manager, Sol Workers"
+  short_description: "Plan and review with Astra; build with Sol"
+  default_prompt: "Use $astra-manager-sol-workers to plan, delegate, and review this coding task."
