@@ -1,6 +1,6 @@
 # Astra Manager, Sol Workers
 
-A Codex skill that keeps GPT-6 Astra High in the manager and code-review role while GPT-5.6 Sol High subagents inspect, implement, test, and repair code.
+A Codex skill that keeps GPT-6 Astra High in the manager and code-review role while GPT-6 Sol High subagents inspect, implement, test, and repair code.
 
 ## What it does
 
@@ -11,7 +11,7 @@ A Codex skill that keeps GPT-6 Astra High in the manager and code-review role wh
 - Review findings go back to the worker that owns the affected area.
 - Workers cannot create more agents.
 
-The skill does not change the model of an already-running Codex task. Select GPT-6 Astra with High reasoning for the main task before invoking it. The skill requests `gpt-5.6-sol` with High reasoning for every worker.
+The skill does not change the model of an already-running Codex task. Select GPT-6 Astra with High reasoning for the main task before invoking it. The skill requests `gpt-6-sol` with High reasoning for every worker.
 
 ## Install
 

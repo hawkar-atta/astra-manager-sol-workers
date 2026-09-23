@@ -1,6 +1,6 @@
 ---
 name: astra-manager-sol-workers
-description: Use GPT-6 Astra High as the manager and code reviewer while GPT-5.6 Sol High subagents inspect, implement, test, and repair code. Use for coding changes when the user says "create multiple agents for the work" or clearly asks for manager-worker orchestration, Astra-managed delegation, Sol workers, multiple agents, or reduced Astra usage through subagents. Do not use for ordinary questions or review-only requests that need no implementation.
+description: Use GPT-6 Astra High as the manager and code reviewer while GPT-6 Sol High subagents inspect, implement, test, and repair code. Use for coding changes when the user says "create multiple agents for the work" or clearly asks for manager-worker orchestration, Astra-managed delegation, Sol workers, multiple agents, or reduced Astra usage through subagents. Do not use for ordinary questions or review-only requests that need no implementation.
 ---
 
 # Astra manager with Sol workers
@@ -17,7 +17,7 @@ The session or app configuration selects the main model. This skill cannot chang
 
 1. Read the user's request and repository instructions. Inspect only enough current code and worktree state to define scope, risks, and acceptance checks.
 2. Write a short implementation plan. Separate independent work only when separate workers will save time or reduce risk, and give each worker non-overlapping ownership.
-3. Delegate all code changes to workers with `model: "gpt-5.6-sol"`, `reasoning_effort: "high"`, and `fork_turns: "none"`. Give each worker a self-contained brief because it receives no parent history. When multiple agents were requested, start as many independently useful workers as current runtime concurrency permits and queue dependent or overlapping assignments.
+3. Delegate all code changes to workers with `model: "gpt-6-sol"`, `reasoning_effort: "high"`, and `fork_turns: "none"`. Give each worker a self-contained brief because it receives no parent history. When multiple agents were requested, start as many independently useful workers as current runtime concurrency permits and queue dependent or overlapping assignments.
 4. Wait for the workers. Review the actual working-tree diff and relevant source, not only the workers' summaries. Check the request, repository rules, correctness, regressions, security-sensitive behavior, and test evidence.
 5. If the review finds a fixable problem, send precise findings back to the worker that owns that area with `followup_task`. The manager must not make the repair. Reuse the responsible worker instead of spawning a replacement.
 6. Re-review the repaired diff. Complete only when the implementation and proportionate checks pass, or report a concrete blocker.
